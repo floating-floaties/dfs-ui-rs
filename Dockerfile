@@ -32,8 +32,8 @@ RUN trunk clean
 
 RUN trunk build --release
 
-FROM rust:$RUST_VERSION as ui
+# FROM rust:$RUST_VERSION as ui
 
-WORKDIR /app
-COPY --from=build_ui /app /app
-CMD [""]
+# WORKDIR /app
+# COPY --from=build_ui /app /app
+# CMD [""]
