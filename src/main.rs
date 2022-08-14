@@ -1,5 +1,9 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
+use yew_oauth2::prelude::*;
+use yew_oauth2::oauth2::*;
+
+use yew::Callback;
 
 #[derive(Clone, Routable, PartialEq)]
 enum MainRoute {
@@ -54,10 +58,37 @@ fn switch_settings(route: &SettingsRoute) -> Html {
 
 #[function_component(App)]
 pub fn app() -> Html {
+    let config = Config {
+        client_id: "cognito-client-id".into(),
+        auth_url: "cognito-url".into(),
+        token_url: "toek-url/token".into()
+    };
+
+    let login = Callback::from(|_: MouseEvent| {
+        OAuth2Dispatcher::<Client>::new().start_login();
+    });
+    
+    let logout = Callback::from(|_: MouseEvent| {
+        OAuth2Dispatcher::<Client>::new().logout();
+    });
+
     html! {
-        <BrowserRouter>
-            <Switch<MainRoute> render={Switch::render(switch_main)} />
-        </BrowserRouter>
+        <OAuth2 {config}>
+            <Authenticated>
+                <p>
+                    <button onclick={logout.clone()}>{"Logout"}</button>
+                </p>
+                <BrowserRouter>
+                    <Switch<MainRoute> render={Switch::render(switch_main)} />
+                </BrowserRouter>
+            </Authenticated>
+            <NotAuthenticated>
+                <p>
+                    {"You need to log in"}
+                    <button onclick={login.clone()}>{"Login"}</button>
+                </p>
+            </NotAuthenticated>
+        </OAuth2>
     }
 }
 
