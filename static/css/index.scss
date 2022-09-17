@@ -1,0 +1,68 @@
+.hero {
+  &.has-background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-background {
+    position: absolute;
+    object-fit: cover;
+    object-position: bottom;
+    width: 100%;
+    height: 100%;
+
+    &.is-transparent {
+      opacity: 0.3;
+    }
+  }
+}
+
+.burger {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-brand {
+  align-items: center;
+}
+
+.navbar.main-color-background {
+  background: rgb(255,0,251);
+  background: -moz-linear-gradient(90deg, rgba(255,0,251,1) 0%, rgba(255,0,191,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(255,0,251,1) 0%, rgba(255,0,191,1) 100%);
+  background: linear-gradient(90deg, rgba(255,0,251,1) 0%, rgba(255,0,191,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00fb",endColorstr="#ff00bf",GradientType=1);
+}
+
+.navbar-item, .navbar-link {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.navbar-item:hover + .navbar-dropdown,
+.navbar-dropdown > .navbar-item {
+  color: rgb(0, 0, 0);
+}
+
+.navbar-start > a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-brand > h1:hover {
+  animation: shake 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
