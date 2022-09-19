@@ -141,6 +141,12 @@ impl Model {
                                 <Link<Route> classes={classes!("navbar-item")} to={Route::Authors}>
                                     { "Dialog Flow System" }
                                 </Link<Route>>
+
+                                <Link<Route> classes={classes!("navbar-item")} to={Route::Authors}>
+                                    { "Configuration Service" }
+                                </Link<Route>>
+
+
                             </div>
                         </div>
                     </div>
