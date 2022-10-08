@@ -23,5 +23,4 @@ web-sys = { version = "0.3.60", features = ["Window", "Navigator"] }
 pulldown-cmark = { version = "0.9.2", default-features = false }
 
 eval-utility = { git = "https://github.com/floating-floaties/eval-utility.git" }
-resolver = { git = "https://github.com/floating-floaties/resolver.git" }
 inflection-rs = { git = "https://github.com/floating-floaties/inflection-rs.git" }

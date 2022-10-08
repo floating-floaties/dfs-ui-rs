@@ -182,7 +182,6 @@ dependencies = [
  "pulldown-cmark",
  "rand",
  "rayon",
- "resolver 0.1.1 (git+https://github.com/floating-floaties/resolver.git)",
  "serde",
  "wasm-bindgen",
  "wasm-bindgen-rayon",
@@ -210,7 +209,7 @@ dependencies = [
  "lazy_static",
  "log",
  "regex",
- "resolver 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "resolver",
  "serde",
  "serde_json",
 ]
@@ -732,16 +731,6 @@ name = "resolver"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2c015e5ce5232da58562cfa381cae7b85b00c13183caf2af987b300c31ff8e54"
-dependencies = [
- "quick-error",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "resolver"
-version = "0.1.1"
-source = "git+https://github.com/floating-floaties/resolver.git#19d1ceaa73b36d612b5ff7a8ae814dd85df68d5d"
 dependencies = [
  "quick-error",
  "serde",
