@@ -37,7 +37,6 @@ pub enum Msg {
 
 pub struct Model {
     navbar_active: bool,
-    user_language: Option<String>,
     inflection: Inflection,
 }
 
@@ -55,8 +54,7 @@ impl Component for Model {
 
         Self {
             navbar_active: false,
-            user_language: None,
-            inflection: Inflection::new(),
+            inflection: Inflection::default(),
         }
     }
 
@@ -143,10 +141,8 @@ impl Model {
                                 </Link<Route>>
 
                                 <Link<Route> classes={classes!("navbar-item")} to={Route::Authors}>
-                                    { "Configuration Service" }
+                                    { "Configuration System" }
                                 </Link<Route>>
-
-
                             </div>
                         </div>
                     </div>

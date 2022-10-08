@@ -17,6 +17,10 @@
   }
 }
 
+.navbar-burger {
+  color: white;
+}
+
 .burger {
   background-color: transparent;
   border: none;
@@ -35,13 +39,18 @@
 }
 
 .navbar-item, .navbar-link {
-  color: rgb(255, 255, 255);
+  color: white;
+  mix-blend-mode: revert;
   font-weight: bold;
+}
+
+.navbar-menu.navbar-start.navbar-item {
+  color: black;
 }
 
 .navbar-item:hover + .navbar-dropdown,
 .navbar-dropdown > .navbar-item {
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .navbar-start > a {

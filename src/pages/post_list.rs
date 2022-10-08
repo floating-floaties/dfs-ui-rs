@@ -72,6 +72,7 @@ impl PostList {
                 </li>
             }
         });
+
         html! {
             <div class="columns">
                 <div class="column">

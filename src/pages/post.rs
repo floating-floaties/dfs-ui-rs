@@ -1,7 +1,8 @@
-use crate::{content, generator::Generated, Route};
 use content::PostPart;
 use yew::prelude::*;
 use yew_router::prelude::*;
+
+use crate::{content, generator::Generated, Route};
 
 #[derive(Clone, Debug, Eq, PartialEq, Properties)]
 pub struct Props {
@@ -63,6 +64,7 @@ impl Component for Post {
         }
     }
 }
+
 impl Post {
     fn render_quote(&self, quote: &content::Quote) -> Html {
         let result = html! {
@@ -108,6 +110,7 @@ impl Post {
         } else {
             html! {}
         };
+
         let paragraphs = section.paragraphs.iter().map(|paragraph| {
             html! {
                 <p>{ paragraph }</p>
